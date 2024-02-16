@@ -2,8 +2,8 @@ import Image from "next/image";
 import styles from "./about.module.css";
 
 export const metadata = {
-  title: "About Page",
-  description: "About description",
+  title: "About HazDev",
+  description: "We create digital ideas that are bigger, bolder, braver and better.",
 };
 
 
