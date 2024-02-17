@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/lib/seedUsers.js", "app/lib/models.js", "app/lib/utils.js", "app/lib/data.js"],
   "exclude": ["node_modules"]
 }

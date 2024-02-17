@@ -2,18 +2,18 @@ import Image from "next/image";
 import styles from "./singlePost.module.css";
 import PostUser from "@/app/Components/PostUser/postUser";
 import { Suspense } from "react";
+import { getOnePost } from "@/app/lib/data"; 
 
-const getBlog = async  (id: number) => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  return await res.json();
-}
-
+// const getBlog = async  (id: number) => {
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+//   return await res.json();
+// }
 
 
 const SinglePostPage = async ({ params } : any) => {
   const { slug } = params;
 
-  const blog = await  getBlog(parseInt(slug));
+  const blog = await  getOnePost(slug);
   
   if (!blog) {
     return <div>Not Found</div>;
@@ -42,7 +42,7 @@ const SinglePostPage = async ({ params } : any) => {
             </span>
           </div>
         </div>
-        <div className={styles.content}>{blog.body}</div>
+        <div className={styles.content}>{blog.desc}</div>
       </div>
     </div>
   );
