@@ -15,6 +15,11 @@ import { getPosts } from "../lib/data";
 //   body: string
 // }
 
+export const metadata = {
+  title: "Blogs",
+  description: "We create digital ideas that are bigger, bolder, braver and better.",
+};
+
 const BlogPage = async () => {
 
   const blogs = await getPosts()

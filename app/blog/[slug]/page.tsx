@@ -9,6 +9,17 @@ import { getOnePost } from "@/app/lib/data";
 //   return await res.json();
 // }
 
+export const generateMetadata = async({params}: any) => {
+  const { slug } = params;
+
+  const blog = await getOnePost(slug);
+
+  return {
+    title: blog.title,
+    description: blog.desc
+  }
+};
+
 
 const SinglePostPage = async ({ params } : any) => {
   const { slug } = params;

@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./about.module.css";
 
 export const metadata = {
-  title: "About HazDev",
+  title: "About",
   description: "We create digital ideas that are bigger, bolder, braver and better.",
 };
 

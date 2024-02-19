@@ -8,7 +8,10 @@ import Footer from "./Components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "HazDev Agency.",
+  title: {
+    default: "HazDev Agency.",
+    template: "%s | HazDev"
+  },
   description: "Creative Thoughts Agency.",
 };
 
