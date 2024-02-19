@@ -10,7 +10,7 @@ const PostCard = ({blog} : any) => {
         <div className={styles.imgContainer}>
           <Image src='/about.png' alt="" fill className={styles.img}/>
         </div>
-        <span className={styles.date}>{blog.createdAt.toString().slice(4, 16)}</span>
+        <span className={styles.date}>{blog.createdAt.toString().slice(0, 10)}</span>
       </div>
       <div className={styles.bottom}>
         <h1 className={styles.title}>{blog.title}</h1>

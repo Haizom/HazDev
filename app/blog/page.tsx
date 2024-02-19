@@ -1,12 +1,12 @@
 import PostCard from "../Components/PostCard/PostCard"
 import styles from "./blog.module.css";
-import { getPosts } from "../lib/data";
+// import { getPosts } from "../lib/data";
 
-// const getBlogs = async  () => {
-//   const response = await fetch("https://jsonplaceholder.typicode.com/posts")
-//   .then(res=> res.json())
-//   return response;
-// }
+const getBlogs = async () => {
+  const response = await fetch("http://localhost:3000/api/blogs")
+  .then(res=> res.json())
+  return response;
+}
 
 // export interface Blog {
 //   userId: number
@@ -22,11 +22,11 @@ export const metadata = {
 
 const BlogPage = async () => {
 
-  const blogs = await getPosts()
+  const blogs = await getBlogs()
 
   return (
     <div className={styles.container}>
-      {blogs?.map((blog) => (
+      {blogs?.map((blog: any) => (
         <div className={styles.post} key={blog.id}>
           <PostCard blog={blog}  />
         </div>

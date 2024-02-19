@@ -2,17 +2,17 @@ import Image from "next/image";
 import styles from "./singlePost.module.css";
 import PostUser from "@/app/Components/PostUser/postUser";
 import { Suspense } from "react";
-import { getOnePost } from "@/app/lib/data"; 
+// import { getOnePost } from "@/app/lib/data"; 
 
-// const getBlog = async  (id: number) => {
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-//   return await res.json();
-// }
+const getBlog = async  (slug: string) => {
+  const res = await fetch(`http://localhost:3000/api/blogs/${slug}`);
+  return await res.json();
+}
 
 export const generateMetadata = async({params}: any) => {
   const { slug } = params;
 
-  const blog = await getOnePost(slug);
+  const blog = await getBlog(slug);
 
   return {
     title: blog.title,
@@ -24,7 +24,7 @@ export const generateMetadata = async({params}: any) => {
 const SinglePostPage = async ({ params } : any) => {
   const { slug } = params;
 
-  const blog = await  getOnePost(slug);
+  const blog = await getBlog(slug);
   
   if (!blog) {
     return <div>Not Found</div>;
@@ -49,7 +49,7 @@ const SinglePostPage = async ({ params } : any) => {
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>
-              {blog?.createdAt?.toString().slice(4, 16)}
+              {blog?.createdAt?.toString().slice(0, 10)}
             </span>
           </div>
         </div>

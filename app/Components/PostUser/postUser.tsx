@@ -15,7 +15,6 @@ import { getUser } from "@/app/lib/data";
 const PostUser = async ({ userId } : any) => {
 
   const user = await getUser(userId);
-  console.log(user);
 
 
   return (
