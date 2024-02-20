@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./singlePost.module.css";
 import PostUser from "@/app/Components/PostUser/postUser";
 import { Suspense } from "react";
-// import { getOnePost } from "@/app/lib/data"; 
+// import { getOnePost } from "@/app/lib/data";
 
 const getBlog = async  (slug: string) => {
   const res = await fetch(`http://localhost:3000/api/blogs/${slug}`);
